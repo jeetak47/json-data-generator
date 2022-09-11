@@ -1,5 +1,6 @@
 package com.github.vincentrussell.json.datagenerator.functions.impl;
 
+import com.github.javafaker.Faker;
 import com.github.vincentrussell.json.datagenerator.functions.Function;
 import com.github.vincentrussell.json.datagenerator.functions.FunctionInvocation;
 
@@ -19,6 +20,9 @@ public class FirstName {
      */
     @FunctionInvocation
     public String firstName(final String gender) {
+        Faker faker = Faker.instance();
+        faker.lordOfTheRings().character();
+
         return ("male".equals(gender)) ? FunctionUtils.getRandomElementFromArray(MALE_FIRST_NAMES) : FunctionUtils.getRandomElementFromArray(FEMALE_FIRST_NAMES);
     }
 
