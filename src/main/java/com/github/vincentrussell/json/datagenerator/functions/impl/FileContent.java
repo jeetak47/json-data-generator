@@ -33,7 +33,7 @@ public class FileContent {
       byte[] data = new byte[(int) file.length()];
       fis.read(data);
       fis.close();
-      return new String(data, "UTF-8");
+      return new String(data, "UTF-8").trim();
     } catch (Exception e) {
       return e.getMessage();
     }
